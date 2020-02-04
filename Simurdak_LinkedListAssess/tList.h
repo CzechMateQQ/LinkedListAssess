@@ -63,7 +63,16 @@ public:
 	// Copy-assignment.
 	tList& operator=(const tList &rhs)
 	{
-		pHead->next = rhs.pHead->next;
+		this.pHead->next = new Node(rhs.pHead->next->data);
+		Node * current = this.pHead->next;
+		Node * originalCurr = rhs.pHead->next;
+		while (originalCurr->next != pTail)
+		{
+			current->next = new Node(originalCurr->next->data);
+			originalCurr = originalCurr->next;
+			current = current->next;
+		}
+		pTail->prev = current;
 		return *this;
 	}
 
