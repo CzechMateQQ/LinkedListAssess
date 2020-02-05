@@ -28,8 +28,7 @@ class tList
 
 public:
 
-	// Initializes fake head and tail.
-	// Also closes list loop by linking tail to head.
+	// Initializes pseudo head and tail.
 	tList()
 	{
 		pHead = new Node();
@@ -133,7 +132,6 @@ public:
 		Node * oldTail = pTail->prev;
 		Node * n = new Node(val, oldTail, pTail);
 		pTail->prev = n;
-		Node* tmp = n;
 		
 		if (oldTail != pHead)
 		{

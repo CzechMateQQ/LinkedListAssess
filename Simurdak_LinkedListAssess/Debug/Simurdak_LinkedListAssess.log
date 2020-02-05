@@ -1,8 +1,8 @@
 ﻿  main.cpp
-c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(281): warning C4018: '<': signed/unsigned mismatch
-  c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(279): note: while compiling class template member function 'void tList<int>::resize(size_t)'
-  c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\main.cpp(30): note: see reference to function template instantiation 'void tList<int>::resize(size_t)' being compiled
-  c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\main.cpp(5): note: see reference to class template instantiation 'tList<int>' being compiled
-c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(283): warning C4018: '<': signed/unsigned mismatch
-c:\users\s199083\source\repos\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(290): warning C4018: '<': signed/unsigned mismatch
-  Simurdak_LinkedListAssess.vcxproj -> C:\Users\s199083\source\repos\Simurdak_LinkedListAssess\Debug\Simurdak_LinkedListAssess.exe
+l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(280): warning C4018: '<': signed/unsigned mismatch
+  l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(278): note: while compiling class template member function 'void tList<int>::resize(size_t)'
+  l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\main.cpp(30): note: see reference to function template instantiation 'void tList<int>::resize(size_t)' being compiled
+  l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\main.cpp(5): note: see reference to class template instantiation 'tList<int>' being compiled
+l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(282): warning C4018: '<': signed/unsigned mismatch
+l:\c++\simurdak_linkedlistassess\simurdak_linkedlistassess\tlist.h(289): warning C4018: '<': signed/unsigned mismatch
+  Simurdak_LinkedListAssess.vcxproj -> L:\C++\Simurdak_LinkedListAssess\Debug\Simurdak_LinkedListAssess.exe
