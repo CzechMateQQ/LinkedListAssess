@@ -47,12 +47,12 @@ public:
 		}
 		else
 		{
-			pHead->next = new Node(original.pHead->next->data);
+			pHead->next = new Node(original.pHead->next->data, pHead, pHead->next->next);
 			Node * current = pHead->next;
 			Node * originalCurr = original.pHead->next;
 			while (originalCurr->next != pTail)
 			{
-				current->next = new Node(originalCurr->next->data);
+				current->next = new Node(originalCurr->next->data, pHead, pHead->next->next);
 				originalCurr = originalCurr->next;
 				current = current->next;
 			}
@@ -63,15 +63,17 @@ public:
 	// Copy-assignment.
 	tList& operator=(const tList &rhs)
 	{
-		this.pHead->next = new Node(rhs.pHead->next->data);
-		Node * current = this.pHead->next;
+		this->clear();
+		this->pHead->next = new Node(rhs.pHead->next->data, pHead, pHead->next->next);
+		Node * current = this->pHead->next;
 		Node * originalCurr = rhs.pHead->next;
-		while (originalCurr->next != pTail)
+		while (originalCurr->next != rhs.pTail)
 		{
-			current->next = new Node(originalCurr->next->data);
+			current->next = new Node(originalCurr->next->data, pHead, pHead->next->next);
 			originalCurr = originalCurr->next;
 			current = current->next;
 		}
+		current->next = this->pTail;
 		pTail->prev = current;
 		return *this;
 	}
@@ -242,17 +244,20 @@ public:
 	// Destroys every single node in the linked list.
 	void clear()
 	{
-		Node * cur = pHead->next;
-		Node * del = cur;
-		while (cur != pTail->prev)
+		if (size() > 0)
 		{
+			Node * cur = pHead->next;
+			Node * del = cur;
+			while (cur != pTail->prev)
+			{
 
-			cur = cur->next;
-			delete(del);
-			del = cur;
+				cur = cur->next;
+				delete(del);
+				del = cur;
+			}
+			pHead->next = nullptr;
+			delete(pHead->next);
 		}
-		pHead->next = nullptr;
-		delete(pHead->next);
 	}
 
 	// Returns size of list.

@@ -4,12 +4,14 @@ int main()
 {
 	tList<int> test;
 
+
 	cout << "TEST LIST CREATED\nPUSHING FIVE ELEMENTS TO THE FRONT: 24, 6, 6, 97, 38" << endl;
 	test.push_front(24);
 	test.push_front(6);
 	test.push_front(6);
 	test.push_front(97);
 	test.push_front(38);
+
 	test.printList();
 	
 	cout << "\nPUSHING FIVE ELEMENTS TO THE BACK: 53, 6, 45, 19, 6" << endl;
@@ -71,13 +73,22 @@ int main()
 	system("pause");
 
 	test.push_back(1);
+	cout << "\nPushing value of '1' to back";
 	for (iterator = test.begin(); !(iterator == test.end());)
 	{
 		iterator++;	
 	}
 	iterator--;
-	cout << "\nTail: " << *iterator << endl << endl;
+	cout << "\nIterating to test .end() function\nTail: " << *iterator << endl << endl;
 	system("pause");
+
+	cout << "\nCreating second list and copying first (copy assignment)" << endl;
+	tList<int> testTwo;
+	testTwo = test;
+	cout << "Printing list 1:";
+	test.printList();
+	cout << "Printing list 2:";
+	testTwo.printList();
 
 	cout << "\nIS LIST EMPTY?" << endl;
 	if (test.empty())
@@ -92,6 +103,7 @@ int main()
 
 	cout << "\nCLEARING LIST...\n" << endl;
 	test.clear();
+	testTwo.clear();
 	system("pause");
 
 	cout << "\nIS LIST EMPTY?" << endl;
